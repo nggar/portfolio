@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $ff-2;
+    font-size: 1.8rem;
+}
+
+.container {
+    max-width: 1900px;
+    margin: 0 auto;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}

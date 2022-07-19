@@ -1,0 +1,51 @@
+.navbar {
+    padding: 1.2rem 3.5rem;
+    background-color: transparent;
+    max-width: 1900px;
+
+    position: fixed;
+    top: 0;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    z-index: 10;
+    transition: background-color .3s ease;
+
+    &:hover {
+        background-color: $cw-white;
+    }
+
+    .inner-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-wrapper {
+        padding: 1.5rem;
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 2.6rem;
+        }
+    }
+
+    .nav {
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .nav-link {
+                padding: 1.5rem 2.5rem;
+                font-size: 1.6rem;
+                line-height: 120%;
+            }
+        }
+    }
+}

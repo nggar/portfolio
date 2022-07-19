@@ -1,0 +1,27 @@
+.contact-section {
+    background-color: $cw-white;
+    position: sticky;
+
+    .contact {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+
+        padding: 17rem 15% 16rem;
+
+        &__heading {
+            max-width: 57rem;
+            margin-bottom: 2rem;
+        }
+
+        .socials {
+            margin: 2rem 0 0 -2.5rem;
+
+            &__link {
+                padding: 1.5rem 2.5rem;
+                font-size: 1.8rem;
+            }
+        }
+    }
+}

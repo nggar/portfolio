@@ -1,0 +1,9 @@
+.footer-section {
+    padding: 3rem 5rem;
+    border-top: 1px solid $cw-border;
+
+    p {
+        color: lighten($cw-heading, 50%);
+        font-size: 1.6rem;
+    }
+}

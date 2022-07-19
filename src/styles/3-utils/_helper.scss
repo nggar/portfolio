@@ -1,0 +1,29 @@
+.link {
+    color: rgba(20, 20, 20, 0.7);
+    transition: color .2s ease;
+
+    &:hover {
+        color: $cw-heading;
+    }
+}
+
+.heading-link {
+    transition: color .3s ease;
+    text-decoration: underline;
+
+    &:hover {
+        color: $cw-form-border;
+    }
+
+    &__hero:hover {
+        color: $cw-border;
+    }
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.opacity-1 {
+    opacity: 1;
+}

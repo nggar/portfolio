@@ -1,0 +1,72 @@
+// HEADINGS
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $ff-1;
+    font-weight: $fw-1;
+    color: $cw-heading;
+}
+
+h1 {
+    font-size: 5.6rem;
+    line-height: 120%;
+}
+
+h2 {
+    font-size: 4.6rem;
+    line-height: 120%;
+}
+
+h3 {
+    font-size: 3.6rem;
+    line-height: 122%;
+}
+
+h4 {
+    font-size: 3rem;
+    line-height: 126%;
+}
+
+h5 {
+    font-size: 2.4rem;
+    line-height: 130%;
+}
+
+h6 {
+    font-size: 1.8rem;
+    line-height: 134%;
+}
+
+// PARAGRAPH
+p,
+li {
+    font-family: $ff-2;
+    font-size: 1.8rem;
+    line-height: 170%;
+    color: $cw-regular;
+    font-weight: $fw-2;
+
+    .paragraph-link {
+        color: $cw-heading;
+        text-decoration: underline;
+    }
+
+    .bold {
+        color: $cw-heading;
+        font-weight: $fw-1;
+    }
+
+    .italic {
+        color: $cw-heading;
+        font-style: italic;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+}

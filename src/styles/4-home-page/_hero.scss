@@ -1,0 +1,37 @@
+.hero-section {
+    min-height: 85vh;
+    padding: 15rem 15% 11rem;
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .inner-hero {
+        max-width: 100rem;
+        position: relative;
+
+        h1 {
+            margin-bottom: 2.5rem;
+
+            .link-portrait {
+                position: relative;
+                z-index: 50;
+            }
+        }
+
+        .img-portrait {
+            position: absolute;
+            object-fit: cover;
+            height: 60vh;
+            will-change: transform, opacity;
+        }
+
+
+        p {
+            max-width: 44rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+}
