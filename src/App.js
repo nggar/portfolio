@@ -22,7 +22,7 @@ function App() {
                     <Route path='/' element={<HomePage />} />
                     <Route path='about' element={<About />} />
                     <Route />
-                    <Route />
+                    <Route path='contact' element={<About />} />
                 </Routes>
             </AnimatePresence>
             <FooterDown />
