@@ -1,0 +1,30 @@
+.section-top {
+    padding: 13rem 15% 6rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .portrait-block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 4rem;
+        width: 100%;
+
+        .portrait {
+            max-width: 40%;
+            max-height: 80rem;
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+        .heading-portrait {
+            margin-bottom: 2.5rem;
+            position: absolute;
+            font-size: 16vw;
+            color: #dedede;
+        }
+    }
+}

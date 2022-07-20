@@ -1,8 +1,9 @@
-import { useRef, useLayoutEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useRef, useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, useTransform, useScroll } from 'framer-motion';
 
 const ProjectsSection = () => {
+    const { pathname } = useLocation();
     // useRef for each project
     const project1 = useRef( null );
     const project2 = useRef( null );
@@ -14,6 +15,13 @@ const ProjectsSection = () => {
     const [offsetStart2, setOffsetStart2] = useState( null );
     const [offsetStart3, setOffsetStart3] = useState( null );
     const [offsetStart4, setOffsetStart4] = useState( null );
+    // get distance from element top to window top
+    useEffect( () => {
+        setOffsetStart1( project1.current.getBoundingClientRect().top - 75 );
+        setOffsetStart2( project2.current.getBoundingClientRect().top - 80 );
+        setOffsetStart3( project3.current.getBoundingClientRect().top - 80 );
+        setOffsetStart4( project4.current.getBoundingClientRect().top - 80 );
+    }, [pathname] );
 
     const { scrollY } = useScroll();
     //project-1
@@ -28,14 +36,6 @@ const ProjectsSection = () => {
     //project-4
     const scale4 = useTransform( scrollY, [offsetStart3, offsetStart4], [.87, 1] );
     const move4 = useTransform( scrollY, [offsetStart3, offsetStart4], ['5vw', '0vw'] );
-
-    // get distance from element top to window top
-    useLayoutEffect( () => {
-        setOffsetStart1( project1.current.getBoundingClientRect().top - 75 );
-        setOffsetStart2( project2.current.getBoundingClientRect().top - 80 );
-        setOffsetStart3( project3.current.getBoundingClientRect().top - 80 );
-        setOffsetStart4( project4.current.getBoundingClientRect().top - 80 );
-    }, [] )
 
     return (
         <section className='projects-section'>

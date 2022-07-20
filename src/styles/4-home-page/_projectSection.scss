@@ -5,7 +5,7 @@
     .projects {
         display: grid;
         grid-template-columns: 1fr;
-        row-gap: 4rem;
+        row-gap: 3rem;
 
         &__item {
             position: sticky;
