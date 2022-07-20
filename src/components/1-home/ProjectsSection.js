@@ -24,6 +24,7 @@ const ProjectsSection = () => {
         setOffsetStart2( rect2 );
         setOffsetStart3( rect3 );
         setOffsetStart4( rect4 );
+        return;
     } );
 
     const { scrollY } = useScroll();
