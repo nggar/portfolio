@@ -21,7 +21,7 @@ function App() {
                 <Routes location={location} key={location.pathname}>
                     <Route path='/' element={<HomePage />} />
                     <Route path='about' element={<About />} />
-                    <Route />
+                    <Route path='project-detail/:id' />
                     <Route path='contact' element={<About />} />
                 </Routes>
             </AnimatePresence>

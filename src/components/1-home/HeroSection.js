@@ -37,7 +37,7 @@ const HeroSection = () => {
                         onMouseEnter={() => setShowImg( !showImg )}
                         onMouseLeave={() => setShowImg( !showImg )}
                         onMouseMove={moveImgPortrait}
-                    >Ophelia
+                    >Enggar
                     </Link>
                     , a creative digital designer and experienced front-end developer.
                 </h1>
