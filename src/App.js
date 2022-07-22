@@ -8,6 +8,7 @@ import './styles/App.scss';
 import Navbar from './components/Navbar';
 import HomePage from './components/1-home/HomePage';
 import About from './components/2-about/About';
+import Contact from './components/4-contact/Contact';
 import FooterDown from './components/FooterDown';
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
                     <Route path='/' element={<HomePage />} />
                     <Route path='about' element={<About />} />
                     <Route path='project-detail/:id' />
-                    <Route path='contact' element={<About />} />
+                    <Route path='contact' element={<Contact />} />
                 </Routes>
             </AnimatePresence>
             <FooterDown />

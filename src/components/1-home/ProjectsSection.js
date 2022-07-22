@@ -6,7 +6,7 @@ const projectVariant = {
     initial: { scale: .9 },
     animate: {
         scale: 1, transition: {
-            duration: 1.5, ease: 'easeOut'
+            duration: 1.2, ease: 'easeOut'
         }
     }
 }

@@ -17,7 +17,6 @@
             max-width: 40%;
             max-height: 80rem;
             object-fit: cover;
-            overflow: hidden;
         }
 
         .heading-portrait {
@@ -25,6 +24,43 @@
             position: absolute;
             font-size: 16vw;
             color: #dedede;
+        }
+    }
+}
+
+.section-content {
+    padding: 0 15% 8rem;
+
+    .grid-subcategory {
+        display: grid;
+        grid-template-columns: 8vw minmax(auto, 78rem);
+        grid-template-rows: auto;
+        gap: 5rem;
+        width: 100%;
+
+        .text-subcategory {
+            margin-top: .4rem;
+            font-size: 1.5rem;
+            line-height: 140%;
+            color: lighten($cw-heading, 50%);
+        }
+
+        .content-subcategory {
+            margin-bottom: 3rem;
+
+            .skills {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                column-gap: 2rem;
+
+                .skill {
+                    li {
+                        margin-bottom: 2rem;
+                        color: $cw-heading;
+                        font-size: 1.8rem;
+                    }
+                }
+            }
         }
     }
 }

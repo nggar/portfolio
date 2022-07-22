@@ -15,13 +15,13 @@ const HeroSection = () => {
         setImgPosition( {
             x: e.clientX - linkRef.current.getBoundingClientRect().left,
             y: e.clientY - linkRef.current.getBoundingClientRect().top
-        } )
+        } );
     }
 
     const imgVariant = {
         initial: { opacity: 0, scale: .7 },
         animate: {
-            left: `calc(3% + ${imgPosition.x}px)`, top: `calc(-30vh + ${imgPosition.y}px)`,
+            left: `calc(5% + ${imgPosition.x}px)`, top: `calc(-30vh + ${imgPosition.y}px)`,
             opacity: showImg ? 1 : 0, scale: showImg ? 1 : .7,
             transition: {
                 duration: .3
