@@ -6,12 +6,14 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: $ff-2;
     font-size: 1.8rem;
     overscroll-behavior-y: none;
+    color: $cw-regular;
 }
 
 .container {

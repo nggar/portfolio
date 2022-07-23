@@ -8,6 +8,7 @@ import './styles/App.scss';
 import Navbar from './components/Navbar';
 import HomePage from './components/1-home/HomePage';
 import About from './components/2-about/About';
+import ProjectDetails from './components/3-project-details/ProjectDetails';
 import Contact from './components/4-contact/Contact';
 import FooterDown from './components/FooterDown';
 
@@ -15,18 +16,20 @@ function App() {
     const location = useLocation();
 
     return (
-        <div className="App container">
-            <Navbar />
-            <AnimatePresence>
-                <ScrollTop />
-                <Routes location={location} key={location.pathname}>
-                    <Route path='/' element={<HomePage />} />
-                    <Route path='about' element={<About />} />
-                    <Route path='project-detail/:id' />
-                    <Route path='contact' element={<Contact />} />
-                </Routes>
-            </AnimatePresence>
-            <FooterDown />
+        <div className="App">
+            <div className="container">
+                <Navbar />
+                <AnimatePresence exitBeforeEnter>
+                    <ScrollTop />
+                    <Routes location={location} key={location.pathname}>
+                        <Route path='/' element={<HomePage />} />
+                        <Route path='about' element={<About />} />
+                        <Route path='project-detail/:id' element={<ProjectDetails />} />
+                        <Route path='contact' element={<Contact />} />
+                    </Routes>
+                </AnimatePresence>
+                <FooterDown />
+            </div>
         </div >
     );
 }
