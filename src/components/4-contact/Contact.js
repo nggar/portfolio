@@ -1,6 +1,14 @@
+import { motion } from 'framer-motion';
+import { pageTransition } from '../utils/animations';
+
 const Contact = () => {
     return (
-        <section className="contact">
+        <motion.section className="contact"
+            variants={pageTransition}
+            initial="initial"
+            animate='animate'
+            exit='exit'
+        >
             <div className="inner-block">
                 <h1 className="title">
                     Fill out the form or just email me at <a href='mailto:jihandokoenggar@gmail.com' className='heading-link'>jihandokoenggar@gmail.com</a>
@@ -15,7 +23,7 @@ const Contact = () => {
                     <button type='submit'>Submit</button>
                 </form>
             </div>
-        </section>
+        </motion.section>
     )
 }
 

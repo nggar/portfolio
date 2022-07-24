@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import ProjectState from '../utils/ProjectState';
+import { motion } from 'framer-motion';
+import { pageTransition } from '../utils/animations';
 
 const ProjectDetails = () => {
     const loc = useLocation();
@@ -20,8 +21,12 @@ const ProjectDetails = () => {
     return (
         <>
             {project && (
-                <div className="project">
-
+                <motion.div className="project"
+                    variants={pageTransition}
+                    initial="initial"
+                    animate='animate'
+                    exit='exit'
+                >
                     {/* section top */}
                     <section className="section-top">
                         <span className="project__info">{project.info}</span>
@@ -29,15 +34,15 @@ const ProjectDetails = () => {
                         <div className="project__links">
                             <div className="project__links__block">
                                 <span className="link-info">Code</span>
-                                <Link to={project.code} className='project-link'>
+                                <a href={project.code} target='_blank' rel="noreferrer" className='project-link'>
                                     <h5 className="heading-link">Github</h5>
-                                </Link>
+                                </a>
                             </div>
                             <div className="project__links__block">
                                 <span className="link-info">Live demo</span>
-                                <Link to={project.liveSite} className='project-link'>
+                                <a href={project.liveSite} target='_blank' rel="noreferrer" className='project-link'>
                                     <h5 className='heading-link'>Website</h5>
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </section>
@@ -63,7 +68,7 @@ const ProjectDetails = () => {
                                 {project.functions}
                             </div>
                             <div className="project-small-img">
-                                <img src={project.imgBottom} alt="project image" />
+                                <img src={project.imgBottom} alt="project preview" />
                             </div>
                             <div className="project-conclution">
                                 <h3>Conclutions</h3>
@@ -71,7 +76,7 @@ const ProjectDetails = () => {
                             </div>
                         </div>
                     </section>
-                </div>
+                </motion.div>
             )
             }
         </>

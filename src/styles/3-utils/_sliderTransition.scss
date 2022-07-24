@@ -1,0 +1,22 @@
+.transition {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $cw-heading;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        position: relative;
+        overflow: hidden;
+
+        h4 {
+            color: $cw-white;
+        }
+    }
+}

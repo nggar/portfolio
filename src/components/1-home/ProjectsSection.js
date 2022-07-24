@@ -6,7 +6,7 @@ const projectVariant = {
     initial: { scale: .9 },
     animate: {
         scale: 1, transition: {
-            duration: 1.2, ease: 'easeOut'
+            duration: .75, ease: 'easeOut'
         }
     }
 }
@@ -15,12 +15,13 @@ const blockTextVariant = {
     initial: { x: '5vw', y: '5vw' },
     animate: {
         x: 0, y: 0, transition: {
-            duration: 1.5, ease: 'easeOut'
+            duration: .75, ease: 'easeOut'
         }
     }
 }
 
 const ProjectsSection = () => {
+
     return (
         <section className='projects-section'>
             <div className="projects">

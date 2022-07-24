@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
 // import utils
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import ScrollTop from './components/utils/scrollTop';
+import SliderAnim from './components/utils/SliderAnim';
 // import styles
 import './styles/App.scss';
 // import pages
@@ -14,18 +15,34 @@ import FooterDown from './components/FooterDown';
 
 function App() {
     const location = useLocation();
+    const [showAnim, setShowAnim] = useState( false );
+
+    useEffect( () => {
+        setShowAnim( true );
+        return () => {
+            setTimeout( () => {
+                setShowAnim( false );
+                window.scroll( {
+                    top: 0
+                } );
+            }, 1000 );
+        }
+    }, [location.pathname] );
+
 
     return (
-        <div className="App">
+        <div className='App'>
+            <AnimatePresence exitBeforeEnter>
+                {showAnim && <SliderAnim />}
+            </AnimatePresence>
             <div className="container">
                 <Navbar />
                 <AnimatePresence exitBeforeEnter>
-                    <ScrollTop />
                     <Routes location={location} key={location.pathname}>
                         <Route path='/' element={<HomePage />} />
-                        <Route path='about' element={<About />} />
-                        <Route path='project-detail/:id' element={<ProjectDetails />} />
-                        <Route path='contact' element={<Contact />} />
+                        <Route path='/about' element={<About />} />
+                        <Route path='/project-detail/:id' element={<ProjectDetails />} />
+                        <Route path='/contact' element={<Contact />} />
                     </Routes>
                 </AnimatePresence>
                 <FooterDown />

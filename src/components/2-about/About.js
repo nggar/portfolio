@@ -1,8 +1,12 @@
 import portrait from '../../images/img-portrait.jpg'
+import { motion } from 'framer-motion';
+import { pageTransition } from '../utils/animations';
 
 const About = () => {
     return (
-        <div className="about">
+        <motion.div className="about"
+            variants={pageTransition} initial='initial' animate='animate' exit='exit'
+        >
             <section className="section-top">
                 <div className="portrait-block">
                     <img src={portrait} alt="portrait" className="portrait" />
@@ -41,7 +45,7 @@ const About = () => {
                     </div>
                 </div>
             </section>
-        </div>
+        </motion.div>
     )
 }
 

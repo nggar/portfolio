@@ -15,7 +15,7 @@ const ProjectState = [
         url: '/project-detail/project-1',
         imgTop: pdt1,
         imgBottom: pdb1,
-        liveSite: '',
+        liveSite: 'https://www.google.com',
         code: '',
         about: <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam cum optio autem non rem quo aliquam, velit repellendus consequuntur expedita vero modi, error, animi iusto provident reprehenderit rerum fugiat aspernatur.</p>,
         techs: <p>React Js, Sass, Tailwind, Sanity, Typescript</p>,
