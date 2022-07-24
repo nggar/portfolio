@@ -15,6 +15,7 @@ import FooterDown from './components/FooterDown';
 
 function App() {
     const location = useLocation();
+    const pathname = location.pathname;
     const [showAnim, setShowAnim] = useState( false );
 
     useEffect( () => {
@@ -27,7 +28,7 @@ function App() {
                 } );
             }, 1000 );
         }
-    }, [location.pathname] );
+    }, [pathname] );
 
 
     return (
