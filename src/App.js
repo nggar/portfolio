@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 // import utils
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
@@ -15,27 +15,26 @@ import FooterDown from './components/FooterDown';
 
 function App() {
     const location = useLocation();
-    const pathname = location.pathname;
     const [showAnim, setShowAnim] = useState( false );
+    const firstRender = useRef( false );
 
     useEffect( () => {
-        setShowAnim( true );
-        return () => {
+        if ( firstRender.current === false ) {
+            setShowAnim( true );
             setTimeout( () => {
                 setShowAnim( false );
                 window.scroll( {
                     top: 0
                 } );
             }, 1000 );
+        } else {
+            firstRender.current === true;
         }
-    }, [pathname] );
+    }, [location.pathname] );
 
 
     return (
         <div className='App'>
-            <AnimatePresence exitBeforeEnter>
-                {showAnim && <SliderAnim />}
-            </AnimatePresence>
             <div className="container">
                 <Navbar />
                 <AnimatePresence exitBeforeEnter>
@@ -48,6 +47,9 @@ function App() {
                 </AnimatePresence>
                 <FooterDown />
             </div>
+            <AnimatePresence exitBeforeEnter>
+                {showAnim && <SliderAnim />}
+            </AnimatePresence>
         </div >
     );
 }

@@ -1,13 +1,11 @@
 export const pageTransition = {
     initial: {
-        y: '100vh',
-        // opacity: 0
+        opacity: 0
     },
     animate: {
-        y: '0vh',
-        // opacity: 1,
+        opacity: 1,
         transition: {
-            duration: .75, delay: .2, ease: 'easeInOut'
+            duration: .3, delay: 1, ease: 'easeInOut'
         }
     },
     exit: {
@@ -29,29 +27,26 @@ export const sliderTransition = {
     },
     exit: {
         y: '-100vh', transition: {
-            duration: .75, ease: 'easeInOut'
+            duration: 1, ease: 'easeInOut'
         }
     }
 }
 
 export const logoTransition = {
     initial: {
-
-        opacity: 0
+        y: 100
     },
     animate: {
         y: 0,
-        opacity: 1,
         transition: {
             duration: .2,
             delay: .5
         }
     },
     exit: {
-
-        opacity: 0,
+        y: 100,
         transition: {
-            duration: .25,
+            duration: .3,
         }
     }
 }
