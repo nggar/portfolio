@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 // import utils
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
@@ -16,20 +16,15 @@ import FooterDown from './components/FooterDown';
 function App() {
     const location = useLocation();
     const [showAnim, setShowAnim] = useState( false );
-    const firstRender = useRef( false );
 
     useEffect( () => {
-        if ( firstRender.current === false ) {
-            setShowAnim( true );
-            setTimeout( () => {
-                setShowAnim( false );
-                window.scroll( {
-                    top: 0
-                } );
-            }, 1000 );
-        } else {
-            firstRender.current === true;
-        }
+        setShowAnim( true );
+        setTimeout( () => {
+            setShowAnim( false );
+            window.scroll( {
+                top: 0
+            } );
+        }, 1000 );
     }, [location.pathname] );
 
 
