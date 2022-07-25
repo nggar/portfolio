@@ -16,34 +16,32 @@ import FooterDown from './components/FooterDown';
 function App() {
     const location = useLocation();
     const [showAnim, setShowAnim] = useState( false );
+    const url = location.pathname;
 
     useEffect( () => {
         setShowAnim( true );
         setTimeout( () => {
             setShowAnim( false );
-            window.scroll( {
-                top: 0
-            } );
-        }, 1000 );
-    }, [location.pathname] );
+        }, 1500 );
+    }, [url] );
 
 
     return (
         <div className='App'>
             <div className="container">
                 <Navbar />
-                <AnimatePresence exitBeforeEnter>
+                <AnimatePresence exitBeforeEnter onExitComplete={() => window.scroll( { top: 0 } )}>
                     <Routes location={location} key={location.pathname}>
                         <Route path='/' element={<HomePage />} />
                         <Route path='/about' element={<About />} />
-                        <Route path='/project-detail/:id' element={<ProjectDetails />} />
+                        <Route path='/project-detail/:id' element={<ProjectDetails url={url} />} />
                         <Route path='/contact' element={<Contact />} />
                     </Routes>
                 </AnimatePresence>
                 <FooterDown />
             </div>
-            <AnimatePresence exitBeforeEnter>
-                {showAnim && <SliderAnim />}
+            <AnimatePresence exitBeforeEnter initial={false}>
+                {showAnim && <SliderAnim url={url} showAnim={showAnim} />}
             </AnimatePresence>
         </div >
     );

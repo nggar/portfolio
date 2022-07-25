@@ -1,52 +1,46 @@
 export const pageTransition = {
     initial: {
-        opacity: 0
+        opacity: 1
     },
     animate: {
         opacity: 1,
-        transition: {
-            duration: .3, delay: 1, ease: 'easeInOut'
-        }
     },
     exit: {
-        opacity: 1,
-        transition: {
-            delay: .5
-        }
+        opacity: 1, transition: { delay: .5 }
     }
 }
 
 export const sliderTransition = {
     initial: {
-        y: '-100vh'
+        y: '-200vh', borderRadius: '50%', scale: 3
     },
     animate: {
-        y: '0vh', transition: {
+        y: '0',
+        transition: {
             duration: .5, ease: 'easeInOut'
         }
     },
     exit: {
-        y: '-100vh', transition: {
-            duration: 1, ease: 'easeInOut'
+        y: '-200vh',
+        transition: {
+            duration: .75, delay: .25, ease: 'easeInOut'
         }
     }
 }
 
 export const logoTransition = {
     initial: {
-        y: 100
+        opacity: 0,
     },
     animate: {
-        y: 0,
-        transition: {
-            duration: .2,
-            delay: .5
+        opacity: 1, transition: {
+            duration: .25, ease: 'easeInOut', delay: .5
         }
     },
     exit: {
-        y: 100,
+        opacity: 0,
         transition: {
-            duration: .3,
+            duration: .25, delay: .1, ease: 'easeInOut'
         }
     }
 }

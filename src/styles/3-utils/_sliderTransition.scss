@@ -11,12 +11,12 @@
     justify-content: center;
     align-items: center;
 
-    div {
-        position: relative;
-        overflow: hidden;
 
-        h4 {
-            color: $cw-white;
-        }
+    h1 {
+        text-align: left;
+        color: #fff;
+        font-size: 6rem;
+        width: min-content;
+        text-decoration: underline;
     }
 }

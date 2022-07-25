@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import ProjectState from '../utils/ProjectState';
 import { motion } from 'framer-motion';
 import { pageTransition } from '../utils/animations';
 
-const ProjectDetails = () => {
-    const loc = useLocation();
-    const url = loc.pathname;
+const ProjectDetails = ( { url } ) => {
     const [projects] = useState( ProjectState );
     const [project, setProject] = useState( undefined );
 
