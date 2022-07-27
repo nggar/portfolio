@@ -4,7 +4,7 @@ export const projectData = [
         info: 'Graphic Design',
         title: 'Design for one of the major figures of fashion',
         id: '0',
-        url: '/project-detail/project-1'
+        url: '/project-detail/project-1',
     },
     {
         info: 'Advertising',

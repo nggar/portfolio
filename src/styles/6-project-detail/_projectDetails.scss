@@ -89,5 +89,48 @@
         }
     }
 
+    // link to another projects
+    .other-projects {
+        border-top: 1px solid $cw-border;
+        margin: 0 4rem;
+        padding: 12rem 0;
+
+        .link-project {
+            min-width: 100%;
+            position: relative;
+
+
+            .heading-wrapper {
+                margin-bottom: 5rem;
+                width: 50%;
+
+                h3 {
+                    text-decoration: none;
+                    margin-bottom: 1rem;
+                }
+
+                .link-circle {
+                    z-index: 10;
+                    border: 2px solid $cw-heading;
+                    border-radius: 50%;
+                    width: 7rem;
+                    height: 7rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            img {
+                width: 30%;
+                position: absolute;
+                right: 15rem;
+                bottom: -3rem;
+                opacity: 1;
+                pointer-events: none;
+            }
+        }
+    }
+
 
 }

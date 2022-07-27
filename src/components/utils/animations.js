@@ -17,13 +17,13 @@ export const sliderTransition = {
     animate: {
         y: '0',
         transition: {
-            duration: .5, ease: 'easeInOut'
+            duration: .5, ease: 'easeInOut', delay: .1
         }
     },
     exit: {
         y: '-200vh',
         transition: {
-            duration: .75, delay: .25, ease: 'easeInOut'
+            duration: .75, delay: .2, ease: 'easeInOut'
         }
     }
 }
@@ -34,13 +34,13 @@ export const logoTransition = {
     },
     animate: {
         opacity: 1, transition: {
-            duration: .25, ease: 'easeInOut', delay: .5
+            duration: .25, ease: 'easeInOut', delay: .6
         }
     },
     exit: {
         opacity: 0,
         transition: {
-            duration: .25, delay: .1, ease: 'easeInOut'
+            duration: .25, ease: 'easeInOut'
         }
     }
 }

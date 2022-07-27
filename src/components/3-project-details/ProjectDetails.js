@@ -2,18 +2,48 @@ import { useState, useEffect } from 'react';
 import ProjectState from '../utils/ProjectState';
 import { motion } from 'framer-motion';
 import { pageTransition } from '../utils/animations';
+import { Link } from 'react-router-dom';
+
+const headingVariants = {
+    animate: {
+        color: '#a9a9a9',
+        transition: {
+            duration: .25, ease: 'easeInOut'
+        }
+    }
+}
+
+const circleVariants = {
+    animate: {
+        rotate: '-45deg', color: '#a9a9a9', borderColor: '#a9a9a9',
+        transition: {
+            duration: .25, ease: 'easeInOut'
+        }
+    }
+}
+
+const imgVariants = {
+    initial: {
+        opacity: 0, scale: .5
+    },
+    animate: {
+        opacity: 1, scale: 1.1, transition: {
+            duration: .25, ease: 'easeInOut'
+        }
+    }
+}
 
 const ProjectDetails = ( { url } ) => {
     const [projects] = useState( ProjectState );
     const [project, setProject] = useState( undefined );
+    const [showImg, setShowImg] = useState( false );
 
     useEffect( () => {
-        const currentProject = projects.filter( ( stateProject ) => stateProject.url === url );
+        const currentProject = projects.filter( ( project ) => project.url === url );
         if ( currentProject[0] ) {
-            setProject( currentProject[0] );
+            setProject( currentProject[0] )
         }
     }, [url, projects] );
-
 
     return (
         <>
@@ -72,6 +102,34 @@ const ProjectDetails = ( { url } ) => {
                                 {project.conclution}
                             </div>
                         </div>
+                    </section>
+
+                    {/* other projects */}
+                    <section className="other-projects">
+                        {projects.map( ( project ) =>
+                            <div to={project.url} className={`link-project ${project.url === url ? 'display-none' : ''}`} key={project.id}>
+                                <motion.div className="heading-wrapper"
+                                    initial='initial'
+                                    whileHover='animate'
+                                >
+                                    <Link to={project.url}>
+                                        <motion.h3
+                                            variants={headingVariants}
+                                        >{project.title}</motion.h3>
+                                        <motion.div className="link-circle"
+                                            variants={circleVariants}
+                                        >
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+                                            </svg>
+                                            <div className="background-circle"></div>
+                                        </motion.div>
+                                        <motion.img src={project.imgBottom} alt='other projects'
+                                            variants={imgVariants}
+                                        />
+                                    </Link>
+                                </motion.div>
+                            </div>
+                        )}
                     </section>
                 </motion.div>
             )

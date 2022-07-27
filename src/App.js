@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 // import utils
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import SliderAnim from './components/utils/SliderAnim';
+import Preloader from './components/utils/Preloader';
 // import styles
 import './styles/App.scss';
 // import pages
@@ -16,18 +17,38 @@ import FooterDown from './components/FooterDown';
 function App() {
     const location = useLocation();
     const [showAnim, setShowAnim] = useState( false );
+    const [firstLoad, setFirstLoad] = useState( false );
+    const firstRender = useRef( false );
     const url = location.pathname;
 
+    // loading animation
+    useEffect( () => {
+        if ( firstRender.current ) {
+            setFirstLoad( true );
+            setTimeout( () => {
+                setFirstLoad( false );
+            }, 1500 );
+        }
+        return () => {
+            firstRender.current = true
+        }
+    }, [] );
+
+    // page trasition animation
     useEffect( () => {
         setShowAnim( true );
-        setTimeout( () => {
-            setShowAnim( false );
-        }, 1500 );
+        return () => {
+            setTimeout( () => {
+                setShowAnim( false );
+            }, 1500 );
+        }
     }, [url] );
 
 
     return (
         <div className='App'>
+
+            {/* Main Component */}
             <div className="container">
                 <Navbar />
                 <AnimatePresence exitBeforeEnter onExitComplete={() => window.scroll( { top: 0 } )}>
@@ -40,8 +61,15 @@ function App() {
                 </AnimatePresence>
                 <FooterDown />
             </div>
-            <AnimatePresence exitBeforeEnter initial={false}>
-                {showAnim && <SliderAnim url={url} showAnim={showAnim} />}
+
+            {/* Prelaoder */}
+            <AnimatePresence>
+                {firstLoad && <Preloader />}
+            </AnimatePresence>
+
+            {/* Page Transition */}
+            <AnimatePresence exitBeforeEnter>
+                {firstLoad === false && showAnim && <SliderAnim url={url} showAnim={showAnim} />}
             </AnimatePresence>
         </div >
     );

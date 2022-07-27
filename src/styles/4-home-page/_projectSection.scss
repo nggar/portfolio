@@ -14,13 +14,16 @@
         }
 
         &__link {
-            display: inline-block;
-            padding: 5rem;
+            padding: 7rem;
             width: 100%;
             min-height: 65vh;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
 
             &--0 {
                 background-color: #f2d0ad;
@@ -40,6 +43,21 @@
             &--3 {
                 background-color: #e8d7c5;
                 background-image: url('../../images/project-4.jpg');
+            }
+
+            .link-wrapper {
+                position: relative;
+                overflow: hidden;
+                width: fit-content;
+                border-bottom: 2px solid $cw-heading;
+
+                &:hover {
+                    border-bottom-color: lighten($cw-heading, 20%);
+
+                    h6 {
+                        color: lighten($cw-heading, 20%);
+                    }
+                }
             }
         }
 

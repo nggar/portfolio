@@ -24,7 +24,7 @@ const HeroSection = () => {
             left: `calc(5% + ${imgPosition.x}px)`, top: `calc(-30vh + ${imgPosition.y}px)`,
             opacity: showImg ? 1 : 0, scale: showImg ? 1 : .7,
             transition: {
-                duration: .3
+                duration: .3,
             }
         }
     }
