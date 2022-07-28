@@ -41,22 +41,25 @@ function App() {
                 ( <AnimatePresence exitBeforeEnter>
                     <Preloader />
                 </AnimatePresence> ) :
-                ( <AnimatePresence exitBeforeEnter>
-                    {showAnim && <SliderAnim url={url} showAnim={showAnim} />}
-                </AnimatePresence> )}
-            <div className={`container ${firstLoad ? 'no-scroll' : ''}`}>
-                <Navbar />
-                <AnimatePresence exitBeforeEnter
-                    onExitComplete={() => window.scroll( { top: 0 } )}>
-                    <Routes location={location} key={location.pathname}>
-                        <Route path='/' element={<HomePage />} />
-                        <Route path='/about' element={<About />} />
-                        <Route path='/project-detail/:id' element={<ProjectDetails url={url} />} />
-                        <Route path='/contact' element={<Contact />} />
-                    </Routes>
-                </AnimatePresence>
-                <FooterDown />
-            </div>
+                ( <>
+                    <AnimatePresence exitBeforeEnter>
+                        {showAnim && <SliderAnim url={url} showAnim={showAnim} />}
+                    </AnimatePresence>
+                    <div className={`container ${firstLoad ? 'no-scroll' : ''}`}>
+                        <Navbar />
+                        <AnimatePresence exitBeforeEnter
+                            onExitComplete={() => window.scroll( { top: 0 } )}>
+                            <Routes location={location} key={location.pathname}>
+                                <Route path='/' element={<HomePage />} />
+                                <Route path='/about' element={<About />} />
+                                <Route path='/project-detail/:id' element={<ProjectDetails url={url} />} />
+                                <Route path='/contact' element={<Contact />} />
+                            </Routes>
+                        </AnimatePresence>
+                        <FooterDown />
+                    </div>
+                </> )}
+
         </div>
     );
 }
