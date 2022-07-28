@@ -6,7 +6,7 @@ const projectVariant = {
     initial: { scale: .9 },
     animate: {
         scale: 1, transition: {
-            duration: .75, ease: 'linear'
+            duration: .75, ease: [0.77, 0, 0.175, 1],
         }
     }
 }
@@ -15,16 +15,7 @@ const blockTextVariant = {
     initial: { x: '5vw', y: '5vw' },
     animate: {
         x: '0vw', y: '0vw', transition: {
-            duration: .75, ease: 'linear'
-        }
-    }
-}
-
-const linkWrapperVariant = {
-    initial: { width: 0 },
-    animate: {
-        width: 'fit-content', transition: {
-            duration: .75, ease: 'linear'
+            duration: .75, ease: [0.77, 0, 0.175, 1]
         }
     }
 }
@@ -64,8 +55,7 @@ const ProjectsSection = () => {
                                 <span className="projects__info">{project.info}</span>
                                 <h2 className="projects__title">{project.title}</h2>
                             </motion.div>
-                            <motion.div className="link-wrapper"
-                                variants={linkWrapperVariant}>
+                            <motion.div className="link-wrapper">
                                 <motion.h6
                                     variants={linkVariant}
                                 >view details</motion.h6>

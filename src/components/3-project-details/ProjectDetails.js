@@ -8,7 +8,7 @@ const headingVariants = {
     animate: {
         color: '#a9a9a9',
         transition: {
-            duration: .25, ease: 'easeInOut'
+            duration: .25, ease: [0.77, 0, 0.175, 1]
         }
     }
 }
@@ -17,7 +17,7 @@ const circleVariants = {
     animate: {
         rotate: '-45deg', color: '#a9a9a9', borderColor: '#a9a9a9',
         transition: {
-            duration: .25, ease: 'easeInOut'
+            duration: .25, ease: [0.77, 0, 0.175, 1]
         }
     }
 }
@@ -27,8 +27,8 @@ const imgVariants = {
         opacity: 0, scale: .5
     },
     animate: {
-        opacity: 1, scale: 1.1, transition: {
-            duration: .25, ease: 'easeInOut'
+        opacity: 1, scale: 1.2, transition: {
+            duration: .25, ease: [0.77, 0, 0.175, 1]
         }
     }
 }
@@ -36,7 +36,6 @@ const imgVariants = {
 const ProjectDetails = ( { url } ) => {
     const [projects] = useState( ProjectState );
     const [project, setProject] = useState( undefined );
-    const [showImg, setShowImg] = useState( false );
 
     useEffect( () => {
         const currentProject = projects.filter( ( project ) => project.url === url );

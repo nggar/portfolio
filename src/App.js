@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 // import utils
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
@@ -18,40 +18,37 @@ function App() {
     const location = useLocation();
     const [showAnim, setShowAnim] = useState( false );
     const [firstLoad, setFirstLoad] = useState( false );
-    const firstRender = useRef( false );
     const url = location.pathname;
 
-    // loading animation
     useEffect( () => {
-        if ( firstRender.current ) {
-            setFirstLoad( true );
-            setTimeout( () => {
-                setFirstLoad( false );
-            }, 1500 );
-        }
-        return () => {
-            firstRender.current = true
-        }
+        setFirstLoad( true );
+        setTimeout( () => {
+            setFirstLoad( false )
+        }, 7000 );
     }, [] );
 
-    // page trasition animation
     useEffect( () => {
         setShowAnim( true );
-        return () => {
-            setTimeout( () => {
-                setShowAnim( false );
-            }, 1500 );
-        }
+        setTimeout( () => {
+            setShowAnim( false );
+        }, 1500 );
     }, [url] );
 
 
     return (
         <div className='App'>
-
-            {/* Main Component */}
-            <div className="container">
+            {firstLoad ?
+                ( <AnimatePresence exitBeforeEnter>
+                    <Preloader />
+                </AnimatePresence> ) :
+                ( <AnimatePresence exitBeforeEnter>
+                    {showAnim && <SliderAnim url={url} showAnim={showAnim} />}
+                </AnimatePresence> )}
+            <div className={`container 
+            ${firstLoad ? 'no-scroll' : ''}`}>
                 <Navbar />
-                <AnimatePresence exitBeforeEnter onExitComplete={() => window.scroll( { top: 0 } )}>
+                <AnimatePresence exitBeforeEnter
+                    onExitComplete={() => window.scroll( { top: 0 } )}>
                     <Routes location={location} key={location.pathname}>
                         <Route path='/' element={<HomePage />} />
                         <Route path='/about' element={<About />} />
@@ -61,17 +58,7 @@ function App() {
                 </AnimatePresence>
                 <FooterDown />
             </div>
-
-            {/* Prelaoder */}
-            <AnimatePresence>
-                {firstLoad && <Preloader />}
-            </AnimatePresence>
-
-            {/* Page Transition */}
-            <AnimatePresence exitBeforeEnter>
-                {firstLoad === false && showAnim && <SliderAnim url={url} showAnim={showAnim} />}
-            </AnimatePresence>
-        </div >
+        </div>
     );
 }
 
