@@ -44,8 +44,7 @@ function App() {
                 ( <AnimatePresence exitBeforeEnter>
                     {showAnim && <SliderAnim url={url} showAnim={showAnim} />}
                 </AnimatePresence> )}
-            <div className={`container 
-            ${firstLoad ? 'no-scroll' : ''}`}>
+            <div className={`container ${firstLoad ? 'no-scroll' : ''}`}>
                 <Navbar />
                 <AnimatePresence exitBeforeEnter
                     onExitComplete={() => window.scroll( { top: 0 } )}>

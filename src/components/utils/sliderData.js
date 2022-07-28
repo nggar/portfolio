@@ -5,7 +5,7 @@ export const sliderData = [
         id: '0'
     },
     {
-        name: 'About me',
+        name: 'About',
         url: '/about',
         id: '1'
     },
@@ -30,7 +30,7 @@ export const sliderData = [
         id: '5'
     },
     {
-        name: 'Brand & Digital',
+        name: 'Brand Digital',
         url: '/project-detail/project-4',
         id: '6'
     }

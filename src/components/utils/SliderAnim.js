@@ -14,7 +14,7 @@ const SliderAnim = ( { url } ) => {
         }
     }, [url, paths] );
     return (
-        <motion.div className={`transition transition__background--${path.id}`}
+        <motion.div className='transition'
             variants={sliderTransition}
             initial='initial'
             animate='animate'

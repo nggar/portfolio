@@ -11,7 +11,7 @@
     justify-content: flex-end;
     align-items: flex-end;
 
-    background-color: $cw-heading;
+    background-color: $cd-border;
 
     .counter-container {
         overflow: hidden;
@@ -23,7 +23,7 @@
         z-index: 9999;
         margin-top: 0px;
         margin-bottom: 1vw;
-        color: $cw-white;
+        color: $cw-border;
         font-size: 30vw;
         line-height: 30vw;
         font-weight: 300;

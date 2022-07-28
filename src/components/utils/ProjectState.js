@@ -69,7 +69,7 @@ const ProjectState = [
         conclution: <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat aliquid totam dolore facilis qui magni explicabo, assumenda a alias in illo sed libero vitae sapiente sunt molestias et numquam minima.</p>
     },
     {
-        info: 'Brand & Digital',
+        info: 'Brand Digital',
         title: 'Designing a website for innovative projects',
         id: '3',
         url: '/project-detail/project-4',

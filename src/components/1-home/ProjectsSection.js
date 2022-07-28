@@ -1,38 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { projectData } from '../utils/projectData';
-
-const projectVariant = {
-    initial: { scale: .9 },
-    animate: {
-        scale: 1, transition: {
-            duration: .75, ease: [0.77, 0, 0.175, 1],
-        }
-    }
-}
-
-const blockTextVariant = {
-    initial: { x: '5vw', y: '5vw' },
-    animate: {
-        x: '0vw', y: '0vw', transition: {
-            duration: .75, ease: [0.77, 0, 0.175, 1]
-        }
-    }
-}
-
-const linkVariant = {
-    initial: {
-        y: '100%',
-    },
-    // target h6
-    hover: {
-        y: '15%',
-        transition: {
-            duration: .5, delay: .25
-        }
-    }
-}
-
+import { projectVariant, blockTextVariant, linkVariant } from '../utils/animations';
 
 const ProjectsSection = () => {
 

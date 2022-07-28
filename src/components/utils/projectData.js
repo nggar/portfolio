@@ -19,7 +19,7 @@ export const projectData = [
         url: '/project-detail/project-3'
     },
     {
-        info: 'Brand & Digital',
+        info: 'Brand Digital',
         title: 'Designing a website for innovative projects',
         id: '3',
         url: '/project-detail/project-4'
