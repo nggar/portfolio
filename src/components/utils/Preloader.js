@@ -65,7 +65,7 @@ const Preloader = () => {
                         <h3>4</h3>
                     </li>
                     <li>
-                        <h3>6</h3>
+                        <h3>7</h3>
                     </li>
                     <li>
                         <h3>9</h3>
@@ -82,7 +82,7 @@ const Preloader = () => {
                         <h3>9</h3>
                     </li>
                     <li>
-                        <h3>8</h3>
+                        <h3>3</h3>
                     </li>
                     <li>
                         <h3>9</h3>
