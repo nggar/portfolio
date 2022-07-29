@@ -17,11 +17,10 @@ import FooterDown from './components/FooterDown';
 function App() {
     const location = useLocation();
     const [showAnim, setShowAnim] = useState( false );
-    const [firstLoad, setFirstLoad] = useState( false );
+    const [firstLoad, setFirstLoad] = useState( true );
     const url = location.pathname;
 
     useEffect( () => {
-        setFirstLoad( true );
         setTimeout( () => {
             setFirstLoad( false )
         }, 7000 );
@@ -36,7 +35,7 @@ function App() {
 
 
     return (
-        <div className='App'>
+        <div className={`App ${firstLoad ? 'no-scroll' : ''}`}>
             {firstLoad ?
                 ( <AnimatePresence exitBeforeEnter>
                     <Preloader />
@@ -45,7 +44,7 @@ function App() {
                     <AnimatePresence exitBeforeEnter>
                         {showAnim && <SliderAnim url={url} showAnim={showAnim} />}
                     </AnimatePresence>
-                    <div className={`container ${firstLoad ? 'no-scroll' : ''}`}>
+                    <div className='container'>
                         <Navbar />
                         <AnimatePresence exitBeforeEnter
                             onExitComplete={() => window.scroll( { top: 0 } )}>

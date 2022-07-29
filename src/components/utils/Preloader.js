@@ -3,6 +3,12 @@ import { timeline } from "motion";
 import { motion } from 'framer-motion';
 
 const loaderVariants = {
+    initial: {
+        opacity: 1
+    },
+    animate: {
+        opacity: 1
+    },
     exit: {
         y: '-100vh', transition: {
             duration: .75, ease: [0.77, 0, 0.175, 1]
@@ -46,6 +52,8 @@ const Preloader = () => {
     return (
         <motion.div className="loader-container" ref={loaderRef}
             variants={loaderVariants}
+            initial='initial'
+            animate='animate'
             exit='exit'
         >
             <div className="counter-container">
